@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Estrutura do nó da lista
-typedef struct Nodo {
+
+typedef struct Nodo {  // Estrutura do nó da lista
     char dado[50];
     struct Nodo *prox;
 } Nodo;
 
-// Função de menu
-void opcoes(int *escolha) {
+
+void opcoes(int *escolha) {   // Função de menu
     printf("---------------------------------\n");
     printf("Menu Lista de Dados\n");
     printf("---------------------------------\n");
@@ -22,8 +22,8 @@ void opcoes(int *escolha) {
     scanf("%d", escolha);
 }
 
-// Inserir novo nó
-void incluir(Nodo **inicio) {
+
+void incluir(Nodo **inicio) {  // Inserir novo nó
     Nodo *novo = (Nodo *)malloc(sizeof(Nodo));
     if (!novo) {
         printf("Erro ao alocar memória!\n");
@@ -46,8 +46,8 @@ void incluir(Nodo **inicio) {
     printf("Item adicionado com sucesso!\n\n");
 }
 
-// Listar dados
-void consultar(Nodo *inicio) {
+
+void consultar(Nodo *inicio) {  // Listar dados
     if (inicio == NULL) {
         printf("A lista está vazia.\n\n");
         return;
@@ -63,8 +63,8 @@ void consultar(Nodo *inicio) {
     printf("\n");
 }
 
-// Alterar dado em uma posição
-void alterar(Nodo *inicio) {
+
+void alterar(Nodo *inicio) {  // Alterar dado em uma posição
     if (inicio == NULL) {
         printf("A lista está vazia.\n\n");
         return;
@@ -90,8 +90,8 @@ void alterar(Nodo *inicio) {
     printf("Alteração feita com sucesso!\n\n");
 }
 
-// Remover nó em uma posição
-void remover(Nodo **inicio) {
+
+void remover(Nodo **inicio) {  // Remover nó em uma posição
     if (*inicio == NULL) {
         printf("A lista está vazia.\n\n");
         return;
@@ -124,8 +124,8 @@ void remover(Nodo **inicio) {
     printf("Removido com sucesso!\n\n");
 }
 
-// Principal
-int main() {
+
+int main() {  // Principal
     Nodo *inicio = NULL;
     int escolha;
 
@@ -144,8 +144,8 @@ int main() {
 
     } while (escolha != 5);
 
-    // Liberar memória
-    Nodo *temp;
+    
+    Nodo *temp;  // Liberar memória
     while (inicio != NULL) {
         temp = inicio;
         inicio = inicio->prox;
